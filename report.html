@@ -13894,7 +13894,7 @@ have such a high weight when it comes to understanding variance and constructing
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11d8889e8&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x118226048&gt;</pre>
 </div>
 
 </div>
@@ -13942,7 +13942,7 @@ have such a high weight when it comes to understanding variance and constructing
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;seaborn.axisgrid.PairGrid at 0x11d8a4198&gt;</pre>
+<pre>&lt;seaborn.axisgrid.PairGrid at 0x118243d68&gt;</pre>
 </div>
 
 </div>
@@ -15093,12 +15093,13 @@ Once you have performed this implementation, the dataset will be stored in the v
 </ul>
 <p>As for the third point, each component represents different segment of customer spending.</p>
 <ul>
-<li>The First principal component represents a wide variety of the feature set, most noteworthy is the information gain for Fresh and Frozen.</li>
-<li>Second principal component shows a decrease for negative-weighted features all across.</li>
-<li>Third principal component shows a large information gain for Delicatessen category followed by Frozen.</li>
-<li>Fourth principal component shows a positive-weighted increase in the Frozen followed by Detergents_Paper.</li>
+<li>The First principal component represents a wide variety of the feature set. It extracts the most variance from Detergents paper, correlating it to milk and grocery. The other features don't have that significant contribution to the weight of the principal component. The negative weight is based on the inverse-linear contribution. The large negative variance of detergents paper indicates that the value of the PC is decreasing with the increase of the detergents paper, and since this is the largest number, this PC is a good measure for detergents paper.</li>
+<li>Second principal component extracts the most variance from fresh, frozen, and Delicatessen. The negative close feature weight for all three of them indicates level of correlation between the different factors.</li>
+<li>Third principal component extracts the most from fresh feature and its negative correlation with the from the opposite weight of delicatessen. The other features weight is relatively small and minimal in terms of contribution.</li>
+<li>Fourth principal component, very much like the third, sheds light on the negative-correlation between frozen and delicatessen, and how the weight of frozen is countered by a large weight of delicatessen.</li>
 </ul>
-<p>The first four dimensions captures the vast majority of the variance in the customer spending, thus, it explains more than 93.11% of it.</p>
+<p>The first four dimensions captures the vast majority of the variance in the customer spending, thus, it explains more than 93.11% of it. It also indicates that customers who buy detergents paper tend to buy milk and grocery as well. Another group will combine their purchases of frozen with fresh. Also, when a customer buys fresh, they are unlikely to buy delicatessen in the same purchase, same applies for customers buying frozen.</p>
+<p>Noteworthy to point the decaying level of variance with each PC, indicating that the weights assigned on the relevance of the data should follow suite.</p>
 
 </div>
 </div>
@@ -15353,7 +15354,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11f73b9e8&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x119ed5080&gt;</pre>
 </div>
 
 </div>
@@ -15449,7 +15450,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="k">import</span> <span class="n">GaussianMixture</span> <span class="k">as</span> <span class="n">GM</span>
@@ -15505,14 +15506,14 @@ Once you have performed this implementation, the dataset will be stored in the v
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Cluster Number: 2, Silhouette Scoree: 0.4219168464626149
-Cluster Number: 3, Silhouette Scoree: 0.36608316580577893
-Cluster Number: 4, Silhouette Scoree: 0.3301386225923704
-Cluster Number: 5, Silhouette Scoree: 0.2808892727769393
-Cluster Number: 6, Silhouette Scoree: 0.3320125897148411
-Cluster Number: 7, Silhouette Scoree: 0.333153846284612
-Cluster Number: 8, Silhouette Scoree: 0.34276516502059884
-Cluster Number: 9, Silhouette Scoree: 0.3124740670294216
-Cluster Number: 10, Silhouette Scoree: 0.33980669715256706
+Cluster Number: 3, Silhouette Scoree: 0.4037593120328789
+Cluster Number: 4, Silhouette Scoree: 0.31094311321319273
+Cluster Number: 5, Silhouette Scoree: 0.34189038303154684
+Cluster Number: 6, Silhouette Scoree: 0.31464191269371933
+Cluster Number: 7, Silhouette Scoree: 0.3322970160147577
+Cluster Number: 8, Silhouette Scoree: 0.3230718882238708
+Cluster Number: 9, Silhouette Scoree: 0.3230224752110275
+Cluster Number: 10, Silhouette Scoree: 0.32730388215210204
 </pre>
 </div>
 </div>
@@ -15890,7 +15891,7 @@ Cluster Number: 10, Silhouette Scoree: 0.33980669715256706
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11fe99e10&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11a5647f0&gt;</pre>
 </div>
 
 </div>
